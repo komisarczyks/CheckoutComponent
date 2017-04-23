@@ -49,17 +49,17 @@ calculateSingleItemCost <- function(itemName, itemCount, products)
 calculateDiscount <- function(items, discounts)
 {
   discountTab <- NULL
-  for(i in 1:nrow(pairDiscounts))
+  for(i in 1:nrow(Discounts))
   {
-    item1 <- pairDiscounts[i, "Item1"]
-    item2 <- pairDiscounts[i, "Item2"]
-    discount <- pairDiscounts[i, "Discount"]
+    item1 <- discounts[i, "Item1"]
+    item2 <- discounts[i, "Item2"]
+    discount <- discounts[i, "Discount"]
     if(item1 %in% items[, "Item"] && item2 %in% items[, "Item"])
     {
       bundleCount <- min(items[which(items[, "Item"] == item1), "Count"], items[which(items[, "Item"] == item2), "Count"])
       if(bundleCount > 0)
       {
-        discountTotal <-  bundleCount * pairDiscounts[i, "Discount"] * (-1)
+        discountTotal <-  bundleCount * discounts[i, "Discount"] * (-1)
         discountTab <- rbind(discountTab, data.frame(Item="", Count=bundleCount, Discount=paste(item1, "+", item2), Cost=discountTotal))
       }
     }
