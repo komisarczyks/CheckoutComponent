@@ -49,7 +49,7 @@ calculateSingleItemCost <- function(itemName, itemCount, products)
 calculateDiscount <- function(items, discounts)
 {
   discountTab <- NULL
-  for(i in 1:nrow(Discounts))
+  for(i in 1:nrow(discounts))
   {
     item1 <- discounts[i, "Item1"]
     item2 <- discounts[i, "Item2"]
