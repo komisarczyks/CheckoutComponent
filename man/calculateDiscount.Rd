@@ -15,11 +15,16 @@ purchased together. Contains 3 columns: 'Item1', 'Item2' (product names) and Dis
 (applied to every pair of two defined products).}
 }
 \value{
-Funcrion returns a data.frame with 4 columns ("Item", "Count", "Discount"
+Function returns a data.frame with 4 columns ("Item", "Count", "Discount"
 and "Cost" - same format as in \code{calculateSingleItemCost} function). Each row is
 a seperate discount from a bundle of two products. The value in 'Discount' column is
-created by combining the names of two products in a bundle.
+created by combining the names of two products in a bundle. The value in Cost column
+is negative to represent that the discount should be deducted from the final cost.
 }
 \description{
-Calculate discount from bundles of products
+For every set of two products located on the list of discounts function calculates
+the minimum amount of items purchased. This value is a total number of bundles of
+a specific type and it is multiplied by a discount value for this bundle to get the
+total discount value. Those steps are repeated for every defined discount to create
+a final table of discounts.
 }

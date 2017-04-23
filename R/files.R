@@ -126,7 +126,6 @@ validatePurchaseItems <- function(products, file="discounts")
 readPurchaseItems <- function(products, file="purchaseItems.csv")
 {
   valid <- validatePurchaseItems(products=products, file=file)
-
   if(valid[[1]] == FALSE)
     stop(valid[[2]])
   items <- valid[[2]]
