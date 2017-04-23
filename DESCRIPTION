@@ -1,10 +1,10 @@
 Package: CheckoutComponent
 Type: Package
 Title: Checkout Component 
-Version: 0.1.0
-Author: Who wrote it
+Version: 0.2
+Author: Slawomir Komisarczyk
 Maintainer: Slawomir Komisarczyk <slawomir.komisarczyk@gmail.com>
-Description: Market Checkout component for calculating prices of purchased products
+Description: Market Checkout Component for calculating prices of purchased products
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
